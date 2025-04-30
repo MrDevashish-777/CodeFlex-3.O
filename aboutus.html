@@ -1,0 +1,1200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IEEE SB Jain Student Branch</title>
+    <link rel="stylesheet" href="./commonStyle.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/aa7454d09f.js" crossorigin="anonymous"></script>
+    <style>
+        @keyframes heartbeat {
+  0% {
+    transform: scale(0);
+  }
+  25% {
+    transform: scale(1.2);
+  }
+  50% {
+    transform: scale(1);
+  }
+  75% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+.slider-container {
+  position: relative;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 800px;
+  height: 600px;
+}
+.slider-container .bullet-container {
+    position: relative;
+    margin: 0 auto;
+    width: 100%; /* Responsive width */
+    max-width: 800px; /* Maximum width */
+    height: auto; /* Adjust height for different aspect ratios */
+    overflow: hidden;
+
+}
+.slider-container .bullet-container .bullet {
+    margin-right: 14px;
+    width: 20px;
+    border-radius: 50%;
+    background-color: white;
+    opacity: 0.5;
+}
+.slider-container .bullet-container .bullet:last-child {
+  margin-right: 0px;
+}
+.slider-container .bullet-container .bullet.active {
+  opacity: 1;
+}
+.slider-container .slider-content {
+    position: relative;
+    left: 50%;
+    top: 50%;
+    width: 70%; /* Adjusted width */
+    height: 60%; /* Adjusted height */
+    transform: translate(-50%, -50%);
+}
+.slider-container .slider-content .slider-single {
+    position: absolute;
+    z-index: 0;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    transition: z-index 0ms 250ms;
+}
+.slider-container .slider-content .slider-single .slider-single-image {
+    position: relative;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.2);
+    transition: 500ms cubic-bezier(0.17, 0.67, 0.55, 1.43);
+    transform: scale(0);
+    opacity: 0;
+}
+.slider-container .slider-content .slider-single .slider-single-download {
+  position: absolute;
+  display: block;
+  right: -22px;
+  bottom: 12px;
+  padding: 15px;
+  color: #333333;
+  background-color: #fdc84b;
+  font-size: 18px;
+  font-weight: 600;
+  font-family: "karla";
+  border-radius: 5px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+  transition: 500ms cubic-bezier(0.17, 0.67, 0.55, 1.43);
+  opacity: 0;
+}
+.slider-container .slider-content .slider-single .slider-single-download:hover, .slider-container .slider-content .slider-single .slider-single-download:focus {
+  outline: none;
+  text-decoration: none;
+}
+.slider-container .slider-content .slider-single .slider-single-title {
+  display: block;
+  float: left;
+  margin: 16px 0 0 20px;
+  font-size: 20px;
+  font-family: "karla";
+  font-weight: 400;
+  color: #ffffff;
+  transition: 500ms cubic-bezier(0.17, 0.67, 0.55, 1.43);
+  opacity: 0;
+}
+.slider-container .slider-content .slider-single .slider-single-likes {
+  display: block;
+  float: right;
+  margin: 16px 20px 0 0;
+  transition: 500ms cubic-bezier(0.17, 0.67, 0.55, 1.43);
+  opacity: 0;
+}
+.slider-container .slider-content .slider-single .slider-single-likes i {
+  font-size: 20px;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 5px;
+  color: #ff6060;
+  transition: 500ms cubic-bezier(0.17, 0.67, 0.55, 1.43);
+  transform: scale(0);
+}
+.slider-container .slider-content .slider-single .slider-single-likes p {
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0;
+  color: #ffffff;
+}
+.slider-container .slider-content .slider-single .slider-single-likes:hover, .slider-container .slider-content .slider-single .slider-single-likes:focus {
+  outline: none;
+  text-decoration: none;
+}
+.slider-container .slider-content .slider-single.preactivede .slider-single-image {
+  transform: translateX(-50%) scale(0);
+}
+.slider-container .slider-content .slider-single.preactive {
+  z-index: 1;
+}
+.slider-container .slider-content .slider-single.preactive .slider-single-image {
+  opacity: 0.3;
+  transform: translateX(-25%) scale(0.8);
+}
+.slider-container .slider-content .slider-single.preactive .slider-single-download {
+  transform: translateX(-150px);
+}
+.slider-container .slider-content .slider-single.preactive .slider-single-title {
+  transform: translateX(-150px);
+}
+.slider-container .slider-content .slider-single.preactive .slider-single-likes {
+  transform: translateX(-150px);
+}
+.slider-container .slider-content .slider-single.proactive {
+  z-index: 1;
+}
+.slider-container .slider-content .slider-single.proactive .slider-single-image {
+  opacity: 0.3;
+  transform: translateX(25%) scale(0.8);
+}
+.slider-container .slider-content .slider-single.proactive .slider-single-download {
+  transform: translateX(150px);
+}
+.slider-container .slider-content .slider-single.proactive .slider-single-title {
+  transform: translateX(150px);
+}
+.slider-container .slider-content .slider-single.proactive .slider-single-likes {
+  transform: translateX(150px);
+}
+.slider-container .slider-content .slider-single.proactivede .slider-single-image {
+  transform: translateX(50%) scale(0);
+}
+.slider-container .slider-content .slider-single.active {
+  z-index: 2;
+}
+.slider-container .slider-content .slider-single.active .slider-single-image {
+  opacity: 1;
+  transform: translateX(0%) scale(1);
+}
+.slider-container .slider-content .slider-single.active .slider-single-download {
+  opacity: 1;
+  transition-delay: 100ms;
+  transform: translateX(0px);
+}
+.slider-container .slider-content .slider-single.active .slider-single-title {
+  opacity: 1;
+  transition-delay: 200ms;
+  transform: translateX(0px);
+}
+.slider-container .slider-content .slider-single.active .slider-single-likes {
+  opacity: 1;
+  transition-delay: 300ms;
+  transform: translateX(0px);
+}
+.slider-container .slider-content .slider-single.active .slider-single-likes i {
+  animation-name: heartbeat;
+  animation-duration: 500ms;
+  animation-delay: 900ms;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+.slider-container .slider-left {
+  position: absolute;
+  z-index: 3;
+  display: block;
+  right: 85%;
+  top: 50%;
+  color: #ffffff;
+  transform: translateY(-50%);
+  padding: 20px 15px;
+  border-top: 2px solid #fdc84b;
+  border-right: 2px solid #fdc84b;
+  border-bottom: 2px solid #fdc84b;
+  border-left: 2px solid #fdc84b;
+  margin-right: -2px;
+}
+.slider-container .slider-right {
+  position: absolute;
+  z-index: 3;
+  display: block;
+  left: 85%;
+  top: 50%;
+  color: #ffffff;
+  transform: translateY(-50%);
+  padding: 20px 15px;
+  border-top: 2px solid #fdc84b;
+  border-right: 2px solid #fdc84b;
+  border-bottom: 2px solid #fdc84b;
+  border-left: 2px solid #fdc84b;
+  margin-left: -2px;
+}
+.slider-container .not-visible {
+  display: none !important;
+}
+/* Mobile-specific styles */
+@media only screen and (max-width: 600px) {
+    /* Apply the same visibility control for mobile sizes */
+  .slider-container .slider-content .slider-single .slider-single-download,
+  .slider-container .slider-content .slider-single .slider-single-title,
+  .slider-container .slider-content .slider-single .slider-single-likes {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0s linear 0.3s;
+  }
+
+  .slider-container .slider-content .slider-single.active .slider-single-download,
+  .slider-container .slider-content .slider-single.active .slider-single-title,
+  .slider-container .slider-content .slider-single.active .slider-single-likes {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    transition-delay: 0s;
+  }
+  
+  .slider-container {
+    height: 300px; /* Optimal height for mobile viewing */
+  }
+
+  /* Adjust font sizes and opacity for clarity and visibility */
+  .slider-container .slider-content .slider-single .slider-single-download,
+  .slider-container .slider-content .slider-single .slider-single-title,
+  .slider-container .slider-content .slider-single .slider-single-likes {
+    font-size: 16px; /* Increased font size for better readability */
+    opacity: 1; /* Full opacity for visibility */
+    transform: translateX(0px); /* Reset transform for proper alignment */
+    transition: opacity 0.3s ease-in-out; /* Smooth transition for opacity changes */
+  }
+
+  /* Adjust button styles for mobile */
+  .slider-container .slider-content .slider-single .slider-single-download {
+    display: block; /* Ensure the button is always visible */
+    width: auto; /* Auto width based on content */
+    padding: 10px 20px; /* Appropriate padding for touch accessibility */
+    font-size: 18px; /* Larger font size for easy reading */
+    background-color: #fdc84b; /* Button color */
+    color: #333333; /* Text color */
+    border-radius: 5px; /* Rounded corners for the button */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Subtle shadow for depth */
+    transition: background-color 0.3s ease-in-out; /* Smooth transition for background color */
+  }
+
+  /* Add a hover effect for the button */
+  .slider-container .slider-content .slider-single .slider-single-download:hover {
+    background-color: #ffa20c; /* Lighter shade on hover */
+  }
+
+  /* Simplify image transitions */
+  .slider-container .slider-content .slider-single .slider-single-image {
+    transition: transform 0.5s ease-in-out; /* Smooth transformation */
+  }
+
+  /* Active state styles */
+  .slider-container .slider-content .slider-single.active .slider-single-image {
+    transform: scale(1.1); /* Slightly larger scale for emphasis */
+  }
+
+  /* Smooth animations for icons */
+  .slider-container .slider-content .slider-single.active .slider-single-likes i {
+    animation: pulse 1s infinite; /* Continuous pulse animation */
+  }
+
+  /* Keyframes for the pulse animation */
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.2);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+}
+
+
+/* Optionally, consider other breakpoints if needed, such as for tablets */
+@media (min-width: 601px) and (max-width: 768px) {
+  /* Adjustments for tablet devices can be made here */
+}
+
+/* Adjustments for desktops and larger devices */
+@media only screen and (min-width: 1025px) {
+  .slider-container {
+    height: 600px; /* Restore original height */
+  }
+
+  .slider-container .bullet-container .bullet {
+    margin-right: 14px; /* Restore original margin */
+    width: 20px; /* Restore original bullet size */
+  }
+
+  .slider-container .slider-content .slider-single .slider-single-download,
+  .slider-container .slider-content .slider-single .slider-single-title,
+  .slider-container .slider-content .slider-single .slider-single-likes {
+    font-size: 20px; /* Larger font size for desktop */
+  }
+
+  .slider-container .slider-left,
+  .slider-container .slider-right {
+    display: block; /* Ensure navigation arrows are visible */
+    padding: 20px 15px; /* Larger padding for easier interaction */
+  }
+
+  .slider-container .slider-content .slider-single .slider-single-image,
+  .slider-container .slider-content .slider-single .slider-single-download,
+  .slider-container .slider-content .slider-single .slider-single-title,
+  .slider-container .slider-content .slider-single .slider-single-likes {
+    transition: 500ms cubic-bezier(0.17, 0.67, 0.55, 1.43); /* Enable smooth transitions */
+  }
+}
+
+
+
+/*# sourceMappingURL=styles.css.map */
+
+    </style>
+</head>
+<body>
+     <!-- Header -->
+     <header>
+        <div id="logo" style="width: 55%;">
+            <a href="./index.html">
+            <img src="./img/IEEE_logo.png" alt="" style="width: 22%;filter: brightness(0) invert(1);">
+            </a>
+        </div>
+        <ul class="nav" id="nav">
+            <ul class="navLogo">
+                <a href="./index.html">
+                    <img src="./img/IEEE_logo.png" alt="" style="width: 40%;filter: brightness(0) invert(1);">
+               </a>
+            </ul>
+
+            <li class="nav-link"><a href="./index.html">Home</a></li>
+            <li class="nav-link"><a href="./aboutus.html">About Us</a></li>
+            <li class="nav-link"><a href="./contact.html">Contact</a></li>
+            <li class="nav-link"><a href="./sponsors.html">Sponsors</a></li>
+            <li class="sociallinkContainer">
+                <img class="sociallink" src="./img/fabook-icon-white.svg" alt="">
+                <img class="sociallink" src="./img/twitter-icon-white.svg" alt="">
+                <img class="sociallink" src="./img/inkedin-icon-white.svg" alt="">
+                <img class="sociallink" src="./img/whatsapp-icon-white.svg" alt="">
+            </li>
+        </ul>
+        <div id="barContainer">
+            <i id="bar" class="fa-solid fa-bars"></i>
+        </div>
+    </header>
+
+    <!-- aboutus hero  -->
+    <section class="gridSection">
+        <div class="sectionDesc aboutusDesc">
+            <h1 class="headline">
+                IEEE SB Jain
+            </h1>
+            <p class="sub-headline">
+                Welcome to the IEEE Student Branch committee of S.B. Jain Institute of Technology, Management & Research, where innovation meets collaboration, and students embark on a journey of technological excellence. Our association with the Institute of Electrical and Electronics Engineers (IEEE) empowers us to create impactful events, and one such stellar success has been the Code Flex series.
+            </p>
+        </div>
+        <div class="sectionPic bouncepic aboutusPic" id="sectionPic">
+            <img src="./img/about-hero.png" alt="">
+        </div>
+    </section>
+
+    <!-- About us status 
+    <div class="statusContainer">
+        <div class="status">
+            <h1><b>360</b> Client</h1>
+            <p>An about page is a key component of every website.</p>
+        </div>
+
+        <div class="status">
+            <h1><b>150+</b> Projects</h1>
+            <p>Page is the first page a visitor sees when they visit your website.</p>
+        </div>
+
+        <div class="status">
+            <h1><b>20+</b> Countries</h1>
+            <p>It is the perfect spot to get started with your company.</p>
+        </div>
+    </div>-->
+
+    <div class="services">
+        <div class="aboutusimgContainer">
+            <img src="./img/about-image-1.jpg" alt="">
+            <img src="./img/about-image-2.jpg" alt="">
+        </div>
+
+        <div class="offers">
+            <div class="eachOffer">
+                <img src="./img/service-icon-3.png" alt="">
+                <div class="offerDesc">
+                    <h1>Project Competitions</h1>
+                    <p>We encourage hands-on learning through project competitions that allow students to showcase their innovative ideas.</p>
+                </div>
+            </div>
+
+            <div class="eachOffer">
+                <img src="./img/service-icon-6.png" alt="">
+                <div class="offerDesc">
+                    <h1>Networking Events</h1>
+                    <p>Our events provide a platform for students to connect with industry professionals, fostering valuable networking opportunities.</p>
+                </div>
+            </div>
+
+            <div class="eachOffer">
+                <img src="./img/service-icon-1.png" alt="">
+                <div class="offerDesc">
+                    <h1>Community Outreach</h1>
+                    <p>We believe in giving back to the community. Our outreach programs aim to use technology for the greater good.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Play Video -->
+       <section>
+           <center><h1><br>Join the Legacy, Shape the Future<br></h1></center>
+           <div class="videoContainer">
+            <!--<div class="video">
+                <img src="./img/about-video.jpg" class="thumbnail" alt="">
+                <img src="./img/video-play-icon-white.svg" class="playIcon" alt="">
+            </div>-->
+            <p>
+                <br>Code Flex 2.O invites you to be a part of this extraordinary journey. Whether you're a seasoned coder or a newcomer to the world of programming, this event promises a blend of challenge, learning, and the opportunity to showcase your talents. As we continue to script success stories, let Code Flex 2.O be the canvas for your next technological masterpiece. Join us in shaping the future of technology at [Your College] IEEE Student Branch.
+            </p>
+           </div>
+       </section>
+
+       <!-- Carousel -->
+    <section class="teamSection">
+        <center><h1 class="sectionHeader">Meet our Team</h1></center>
+        <div class="slider-container">
+
+            <div class="slider-content">
+        
+                <div class="slider-single">
+                    <img class="slider-single-image" src="./img/Rathode sir.jpeg" alt="1" style="width:fit-content;"/>
+                    <h1 class="slider-single-title">Dr. Chandrakant Rathore</h1>
+                    <a class="slider-single-likes" href="javascript:void(0);">
+                        <i class="fa fa-heart"></i>
+                        <p>Chapter Advisor</p>
+                    </a>
+                </div>
+        
+                <!-- <div class="slider-single">
+                    <img class="slider-single-image" src="./img/team-image-2.jpg" alt="2" style="width:fit-content;"/>
+                    <br><h1 class="slider-single-title">Chaitanya Fulpatil</h1>
+                    <a class="slider-single-likes" href="javascript:void(0);">
+                        <i class="fa fa-heart"></i>
+                        <p>Advisor</p>
+                    </a>
+                </div> -->
+        
+                <div class="slider-single">
+                    <img class="slider-single-image" src="./img/Parth Shende.jpeg" alt="3" style="width:fit-content;"/>
+                    <br><h1 class="slider-single-title">Parth Shende</h1>
+                    <a class="slider-single-likes" href="javascript:void(0);">
+                        <i class="fa fa-heart"></i>
+                        <p>Mentor</p>
+                    </a>
+                </div>
+        
+        
+                <div class="slider-single">
+                    <img class="slider-single-image" src="./img/Piyush.jpeg" alt="4" style="width:fit-content;"/>
+                    <br><h1 class="slider-single-title">Piyush Tembhekar</h1>
+                    <a class="slider-single-likes" href="javascript:void(0);">
+                        <i class="fa fa-heart"></i>
+                        <p>Mentor</p>
+                    </a>
+                </div>
+        
+        
+                <div class="slider-single">
+                    <img class="slider-single-image" src="./img/Ansh Shirpurkar .jpg" alt="5" style="width:fit-content;"/>
+                    <br><h1 class="slider-single-title">Ansh Shirpurkar</h1>
+                    <a class="slider-single-likes" href="javascript:void(0);">
+                        <i class="fa fa-heart"></i>
+                        <p>Chairperson</p>
+                    </a>
+                </div>
+        
+                <div class="slider-single">
+                    <img class="slider-single-image" src="./img/GurjyotSinghRaina.JPG" alt="6" style="width:fit-content;"/>
+                    <br><h1 class="slider-single-title">Gurjyot Singh Raina</h1>
+                    <a class="slider-single-likes" href="javascript:void(0);">
+                        <i class="fa fa-heart"></i>
+                        <p>Vice-Chairperson</p>
+                    </a>
+                </div>
+
+                <div class="slider-single">
+                    <img class="slider-single-image" src="./img/Vaibhavi Sakhare.jpg" alt="7" style="width:fit-content;"/>
+                    <br><h1 class="slider-single-title">Vaibhavi Sakhare</h1>
+                    <a class="slider-single-likes" href="javascript:void(0);">
+                        <i class="fa fa-heart"></i>
+                        <p>Secretary</p>
+                    </a>
+                </div>
+
+                <div class="slider-single">
+                    <img class="slider-single-image" src="./img/Pranjali Yadav (C.S.E).jpg" alt="8" style="width:fit-content;"/>
+                    <br><h1 class="slider-single-title">Pranjali Yadav</h1>
+                    <a class="slider-single-likes" href="javascript:void(0);">
+                        <i class="fa fa-heart"></i>
+                        <p>Joint Secretary</p>
+                    </a>
+                </div>
+
+                <div class="slider-single">
+                    <img class="slider-single-image" src="./img/Soham Patil.jpg" alt="9" style="width:fit-content;"/>
+                    <br><h1 class="slider-single-title">Soham Patil</h1>
+                    <a class="slider-single-likes" href="javascript:void(0);">
+                        <i class="fa fa-heart"></i>
+                        <p>Treasurer</p>
+                    </a>
+                </div>
+
+                <!-- <div class="slider-single">
+                    <img class="slider-single-image" src="./img/" alt="10" />
+                    <h1 class="slider-single-title">Harshada Nimbalkar</h1>
+                    <a class="slider-single-likes" href="javascript:void(0);">
+                        <i class="fa fa-heart"></i>
+                        <p>Joint Treasurer</p>
+                    </a>
+                </div> -->
+
+                <div class="slider-single">
+                    <img class="slider-single-image" src="./img/T.Devashish Pillay.jpg" alt="11" style="width:fit-content;"/>
+                    <br><h1 class="slider-single-title">Devashish Pillay</h1>
+                    <a class="slider-single-likes" href="javascript:void(0);">
+                        <i class="fa fa-heart"></i>
+                        <p>Technical Head</p>
+                    </a>
+                </div>
+
+                <!-- <div class="slider-single">
+                    <img class="slider-single-image" src="./img/Piyush.jpeg" alt="12" />
+                    <h1 class="slider-single-title">Piyush Gedam</h1>
+                    <a class="slider-single-likes" href="javascript:void(0);">
+                        <i class="fa fa-heart"></i>
+                        <p>Membership Head</p>
+                    </a>
+                </div> -->
+
+                <div class="slider-single">
+                    <img class="slider-single-image" src="./img/Sagar Vinodiya.jpg" alt="13" style="width:fit-content;"/>
+                    <br><h1 class="slider-single-title">Sagar Vinodiya</h1>
+                    <a class="slider-single-likes" href="javascript:void(0);">
+                        <i class="fa fa-heart"></i>
+                        <p>Webmaster</p>
+                    </a>
+                </div>
+
+                <div class="slider-single">
+                    <img class="slider-single-image" src="./img/Charushree.jpeg" alt="14" style="width:fit-content;"/>
+                    <br><h1 class="slider-single-title">Charushree Bhisikar</h1>
+                    <a class="slider-single-likes" href="javascript:void(0);">
+                        <i class="fa fa-heart"></i>
+                        <p>Media Team</p>
+                    </a>
+                </div>
+
+                <div class="slider-single">
+                    <img class="slider-single-image" src="./img/Ujwal Dhole.jpg" alt="15" style="width:fit-content;"/>
+                    <br><h1 class="slider-single-title">Ujwal Dhole</h1>
+                    <a class="slider-single-likes" href="javascript:void(0);">
+                        <i class="fa fa-heart"></i>
+                        <p>Finance Team</p>
+                    </a>
+                </div>
+
+                <div class="slider-single">
+                    <img class="slider-single-image" src="./img/UtkarshPaighan.jpg" alt="16" style="width:fit-content;"/>
+                    <br><h1 class="slider-single-title">Utkarsh Paighan</h1>
+                    <a class="slider-single-likes" href="javascript:void(0);">
+                        <i class="fa fa-heart"></i>
+                        <p>Event Team</p>
+                    </a>
+                </div>
+
+                <div class="slider-single">
+                    <img class="slider-single-image" src="./img/Ninad Manekar.jpg" alt="17" style="width:fit-content;"/>
+                    <br><h1 class="slider-single-title">Ninand Manekar</h1>
+                    <a class="slider-single-likes" href="javascript:void(0);">
+                        <i class="fa fa-heart"></i>
+                        <p>Pubilicity Team</p>
+                    </a>
+                </div>
+
+                <div class="slider-single">
+                    <img class="slider-single-image" src="./img/Kaustubh Charpe.jpg" alt="18" style="width:fit-content;"/>
+                    <br><h1 class="slider-single-title">kaustubh Charpe</h1>
+                    <a class="slider-single-likes" href="javascript:void(0);">
+                        <i class="fa fa-heart"></i>
+                        <p>Nomination Team</p>
+                    </a>
+                </div>
+
+                <div class="slider-single">
+                    <img class="slider-single-image" src="./img/Vaishnavi.PNG" alt="19" style="width:fit-content;"/>
+                    <br><h1 class="slider-single-title">Vaishnavi Dharmik</h1>
+                    <a class="slider-single-likes" href="javascript:void(0);">
+                        <i class="fa fa-heart"></i>
+                        <p>Media Team</p>
+                    </a>
+                </div>
+
+                <div class="slider-single">
+                    <img class="slider-single-image" src="./img/Mrunali Dhoke.jpg" alt="20" style="width:fit-content;"/>
+                    <br><h1 class="slider-single-title">Mrunali Dhoke</h1>
+                    <a class="slider-single-likes" href="javascript:void(0);">
+                        <i class="fa fa-heart"></i>
+                        <p>Finance Team</p>
+                    </a>
+                </div>
+
+                <div class="slider-single">
+                    <img class="slider-single-image" src="./img/Isha Gothwad.jpg" alt="21" style="width:fit-content;"/>
+                    <br><h1 class="slider-single-title">Isha Gothwad</h1>
+                    <a class="slider-single-likes" href="javascript:void(0);">
+                        <i class="fa fa-heart"></i>
+                        <p>Event Team</p>
+                    </a>
+                </div>
+
+                <!-- <div class="slider-single">
+                    <img class="slider-single-image" src="./img/prem" alt="22" />
+                    <h1 class="slider-single-title">Prem Bainalwar</h1>
+                    <a class="slider-single-likes" href="javascript:void(0);">
+                        <i class="fa fa-heart"></i>
+                        <p>Pubilicity Team</p>
+                    </a>
+                </div> -->
+
+                <div class="slider-single">
+                    <img class="slider-single-image" src="./img/shakyagharde.pdf.png" alt="23" style="width:fit-content;"/>
+                    <h1 class="slider-single-title">Shakya Gharde</h1>
+                    <a class="slider-single-likes" href="javascript:void(0);">
+                        <i class="fa fa-heart"></i>
+                        <p>Nomination Team</p>
+                    </a>
+                </div>
+
+                
+            </div>
+        </div>
+        <!--OLD Carousel-->
+
+        <!-- <div class="carouselContainer">
+            <div class="eachCarousel eachTeam">
+                <div class="teamPic">
+                    <img src="./img/Rathode sir.jpeg" alt="">
+                    </div>
+                </div>
+                <div class="teamDesc">
+                    <h1 class="teamName">Dr. Chandrakant Rathore</h1>
+                    <p class="position">Chapter Advisor</p>
+                </div>
+
+            </div>
+    
+            <div class="eachCarousel eachTeam">
+                <div class="teamPic">
+                    <img src="./img/team-image-2.jpg" alt="">
+                    <div class="teamSocialLink">
+                        <img src="./img/Facebook_black.svg" alt="">
+                        <img src="./img/Vimeo_black.svg" alt="">
+                        <img src="./img/Twitter_black.svg" alt="">
+                        <img src="./img/Instagram_black.svg" alt="">
+                    </div> 
+                </div>
+                <div class="teamDesc">
+                    <h1 class="teamName">Chaitanya Fulpatil</h1>
+                    <p class="position">Advisor</p>
+                </div>
+            </div>
+    
+            <div class="eachCarousel eachTeam">
+                <div class="teamPic">
+                    <img src="./img/Parth Shende.jpeg" alt="">
+                     <div class="teamSocialLink">
+                        <img src="./img/Facebook_black.svg" alt="">
+                        <img src="./img/Vimeo_black.svg" alt="">
+                        <img src="./img/Twitter_black.svg" alt="">
+                        <img src="./img/Instagram_black.svg" alt="">
+                    </div> 
+                </div>
+                <div class="teamDesc">
+                    <h1 class="teamName">Parth Shende</h1>
+                    <p class="position">Mentor</p>
+                </div>
+            </div>
+    
+            <div class="eachCarousel eachTeam">
+                <div class="teamPic">
+                    <img src="./img/Piyush.jpeg" alt="">
+                     <div class="teamSocialLink">
+                        <img src="./img/Facebook_black.svg" alt="">
+                        <img src="./img/Vimeo_black.svg" alt="">
+                        <img src="./img/Twitter_black.svg" alt="">
+                        <img src="./img/Instagram_black.svg" alt="">
+                    </div> 
+                </div>
+                <div class="teamDesc">
+                    <h1 class="teamName">Piyush Tembhekar</h1>
+                    <p class="position">Mentor</p>
+                </div>
+
+            </div>
+    
+            <div class="eachCarousel eachTeam">
+                <div class="teamPic">
+                    <img src="./img/Ansh Shirpurkar .jpg" alt="" style="width: 80%;">
+                     <div class="teamSocialLink">
+                        <img src="./img/Facebook_black.svg" alt="">
+                        <img src="./img/Vimeo_black.svg" alt="">
+                        <img src="./img/Twitter_black.svg" alt="">
+                        <a herf="https://instagram.com/ansh_shirpurkar?igshid=ZDdkNTZiNTM="><img src="./img/Instagram_black.svg" alt=""></a>
+                    </div> 
+                </div>
+                <div class="teamDesc">
+                    <h1 class="teamName">Ansh Shirpurkar</h1>
+                    <p class="position">Chairperson</p>
+                </div>
+            </div>
+    
+            <div class="eachCarousel eachTeam">
+                <div class="teamPic">
+                    <img src="./img/GurjyotSinghRaina.JPG" alt="">
+                     <div class="teamSocialLink">
+                        <img src="./img/Facebook_black.svg" alt="">
+                        <img src="./img/Vimeo_black.svg" alt="">
+                        <img src="./img/Twitter_black.svg" alt="">
+                        <img src="./img/Instagram_black.svg" alt="">
+                    </div> 
+                </div>
+                <div class="teamDesc">
+                    <h1 class="teamName">Gurjyot Singh Raina</h1>
+                    <p class="position">Vice-Chairperson</p>
+                </div>
+            </div>
+
+            <div class="eachCarousel eachTeam">
+                <div class="teamPic">
+                    <img src="./img/Vaibhavi Sakhare.jpg" alt="">
+                     <div class="teamSocialLink">
+                        <img src="./img/Facebook_black.svg" alt="">
+                        <img src="./img/Vimeo_black.svg" alt="">
+                        <img src="./img/Twitter_black.svg" alt="">
+                        <img src="./img/Instagram_black.svg" alt="">
+                    </div> 
+                </div>
+                <div class="teamDesc">
+                    <h1 class="teamName">Vaibhavi Sakhare</h1>
+                    <p class="position">Secretary</p>
+                </div>
+            </div>
+
+                <div class="eachCarousel eachTeam">
+                    <div class="teamPic">
+                        <img src="./img/Pranjali Yadav (C.S.E).jpg" alt="" style="width: 80%;">
+                         <div class="teamSocialLink">
+                            <img src="./img/Facebook_black.svg" alt="">
+                            <img src="./img/Vimeo_black.svg" alt="">
+                            <img src="./img/Twitter_black.svg" alt="">
+                            <img src="./img/Instagram_black.svg" alt="">
+                        </div> 
+                    </div>
+                    <div class="teamDesc">
+                        <h1 class="teamName">Pranjali Yadav</h1>
+                        <p class="position">Joint Secretary</p>
+                    </div>
+                </div>
+
+                    <div class="eachCarousel eachTeam">
+                        <div class="teamPic">
+                            <img src="./img/Soham Patil.jpg" alt="">
+                            <div class="teamSocialLink">
+                                <img src="./img/Facebook_black.svg" alt="">
+                                <img src="./img/Vimeo_black.svg" alt="">
+                                <img src="./img/Twitter_black.svg" alt="">
+                                <img src="./img/Instagram_black.svg" alt="">
+                            </div> 
+                        </div>
+                        <div class="teamDesc">
+                            <h1 class="teamName">Soham Patil</h1>
+                            <p class="position">Treasurer</p>
+                        </div>
+                    </div>
+
+                        <div class="eachCarousel eachTeam">
+                            <div class="teamPic">
+                                <img src="./img/T.Devashish Pillay.jpg" alt="">
+                                 <div class="teamSocialLink">
+                                    <img src="./img/Facebook_black.svg" alt="">
+                                    <img src="./img/Vimeo_black.svg" alt="">
+                                    <img src="./img/Twitter_black.svg" alt="">
+                                    <img src="./img/Instagram_black.svg" alt="">
+                                </div> 
+                            </div>
+                            <div class="teamDesc">
+                                <h1 class="teamName">T.Devashish Pillay</h1>
+                                <p class="position">Technical Head</p>
+                            </div>
+                        </div>
+
+                            <div class="eachCarousel eachTeam">
+                                <div class="teamPic">
+                                    <img src="./img/Rathode sir.jpeg" alt="">
+                                    <div class="teamSocialLink">
+                                        <img src="./img/Facebook_black.svg" alt="">
+                                        <img src="./img/Vimeo_black.svg" alt="">
+                                        <img src="./img/Twitter_black.svg" alt="">
+                                        <img src="./img/Instagram_black.svg" alt="">
+                                    </div> 
+                                </div>
+                                <div class="teamDesc">
+                                    <h1 class="teamName">Piyush Gedam</h1>
+                                    <p class="position">Membership Head</p>
+                                </div>
+                            </div>
+
+                                <div class="eachCarousel eachTeam">
+                                    <div class="teamPic">
+                                        <img src="./img/Sagar Vinodiya.jpg" alt="" style="width: 90%;">
+                                         <div class="teamSocialLink">
+                                            <img src="./img/Facebook_black.svg" alt="">
+                                            <img src="./img/Vimeo_black.svg" alt="">
+                                            <img src="./img/Twitter_black.svg" alt="">
+                                            <img src="./img/Instagram_black.svg" alt="">
+                                        </div> 
+                                    </div>
+                                    <div class="teamDesc">
+                                        <h1 class="teamName">Sagar Vinodiya</h1>
+                                        <p class="position">Webmaster</p>
+                                    </div>
+                                </div>
+
+            
+                        </div>
+        
+                    </div>
+    
+                </div>
+
+            </div>
+        </div>
+        <div class="carouselIndicator">
+            <div class="indicator activeIndicator" onclick="slideCarousel(0)"></div>
+            <div class="indicator" onclick="slideCarousel(1)"></div>
+            <div class="indicator" onclick="slideCarousel(2)"></div>
+            <div class="indicator" onclick="slideCarousel(3)"></div>
+            <div class="indicator" onclick="slideCarousel(4)"></div>
+            <div class="indicator" onclick="slideCarousel(5)"></div>
+            <div class="indicator" onclick="slideCarousel(6)"></div>
+            <div class="indicator" onclick="slideCarousel(7)"></div>
+            <div class="indicator" onclick="slideCarousel(8)"></div>
+            <div class="indicator" onclick="slideCarousel(9)"></div>
+            <div class="indicator" onclick="slideCarousel(10)"></div>
+            <div class="indicator" onclick="slideCarousel(11)"></div>
+        </div> -->
+    </section>
+
+    <!-- footer -->
+    <footer>
+        <div class="joinSection">
+            <div class="joinDesc">
+                <h1 class="sectionHeader">CodeFlex 2.O - Register Now!</h1>
+                <p class="sectionPara">
+                    Ready to take on the CodeFlex challenge? Register now and unlock a world of coding excitement!
+                </p>
+            </div>
+            <button class="btn primaryBtn">Register Now</button>
+        </div>
+
+        <div class="footerlinksContainer">
+            <div class="footerAboutus">
+                <img src="./img/IEEE_logo.png" alt="" style="width: 60%;filter: brightness(0) invert(1);">
+                <p class="darkPara"><p>
+                Unlock your potential and stay tuned for updates on our upcoming events.</p>
+                </p>
+                <div class="footersociallinkContainer">
+                    <img class="sociallink" src="./img/fabook-icon-white.svg" alt="">
+                    <img class="sociallink" src="./img/twitter-icon-white.svg" alt="">
+                    <img class="sociallink" src="./img/inkedin-icon-white.svg" alt="">
+                    <img class="sociallink" src="./img/whatsapp-icon-white.svg" alt="">
+                </div>
+            </div>
+
+            <div class="footerlink">
+                <h1 class="linkTitle">Our College</h1>
+                <p>S.B.Jain Institute of Technology, Management & Research, Nagpur</p>
+                <p>Yerla Village, Kalmeshwar Road, Nagpur, Maharashtra 441501</p>
+                <p>Contact: 9823218380</p>
+            </div>
+
+            <div class="footerlink">
+                <h1 class="linkTitle">Sponsors</h1>
+                <p>Sponsor 1</p>
+                <p>Sponsor 2</p>
+            </div>
+
+            <!--<div class="footerlink">
+                <h1 class="linkTitle">Collaborators</h1>
+                <p>Collaborator 1</p>
+                <p>Collaborator 2</p>
+            </div>-->
+
+            <div class="footerlink">
+                <h1 class="linkTitle">Host Partners</h1>
+                <p>Host Partner 1</p>
+                <p>Host Partner 2</p>
+            </div>
+        </div>
+
+        <div class="footerCopyright">
+             <p>&copy; 2024 design and developed by <a href="#" class="developedBy">IEEE SB Jain Student Branch</a>.</p>
+        </div>
+    </footer>
+    
+    <script src="./script.js"></script>
+    <script>
+        const repeat = false;
+        const noArrows = false;
+        const noBullets = false;
+        
+        
+        const container = document.querySelector('.slider-container');
+        var slide = document.querySelectorAll('.slider-single');
+        var slideTotal = slide.length - 1;
+        var slideCurrent = -1;
+        
+        function initBullets() {
+            if (noBullets) {
+                return;
+            }
+            const bulletContainer = document.createElement('div');
+            bulletContainer.classList.add('bullet-container')
+            slide.forEach((elem, i) => {
+                const bullet = document.createElement('div');
+                bullet.classList.add('bullet')
+                bullet.id = `bullet-index-${i}`
+                bullet.addEventListener('click', () => {
+                    goToIndexSlide(i);
+                })
+                bulletContainer.appendChild(bullet);
+                elem.classList.add('proactivede');
+            })
+            container.appendChild(bulletContainer);
+        }
+        
+        function initArrows() {
+            if (noArrows) {
+                return;
+            }
+            const leftArrow = document.createElement('a')
+            const iLeft = document.createElement('i');
+            iLeft.classList.add('fa')
+            iLeft.classList.add('fa-arrow-left')
+            leftArrow.classList.add('slider-left')
+            leftArrow.appendChild(iLeft)
+            leftArrow.addEventListener('click', () => {
+                slideLeft();
+            })
+            const rightArrow = document.createElement('a')
+            const iRight = document.createElement('i');
+            iRight.classList.add('fa')
+            iRight.classList.add('fa-arrow-right')
+            rightArrow.classList.add('slider-right')
+            rightArrow.appendChild(iRight)
+            rightArrow.addEventListener('click', () => {
+                slideRight();
+            })
+            container.appendChild(leftArrow);
+            container.appendChild(rightArrow);
+        }
+        
+        function slideInitial() {
+            initBullets();
+            initArrows();
+            setTimeout(function () {
+                slideRight();
+            }, 500);
+        }
+        
+        function updateBullet() {
+            if (!noBullets) {
+                document.querySelector('.bullet-container').querySelectorAll('.bullet').forEach((elem, i) => {
+                    elem.classList.remove('active');
+                    if (i === slideCurrent) {
+                        elem.classList.add('active');
+                    }
+                })
+            }
+            checkRepeat();
+        }
+        
+        function checkRepeat() {
+            if (!repeat) {
+                if (slideCurrent === slide.length - 1) {
+                    slide[0].classList.add('not-visible');
+                    slide[slide.length - 1].classList.remove('not-visible');
+                    if (!noArrows) {
+                        document.querySelector('.slider-right').classList.add('not-visible')
+                        document.querySelector('.slider-left').classList.remove('not-visible')
+                    }
+                }
+                else if (slideCurrent === 0) {
+                    slide[slide.length - 1].classList.add('not-visible');
+                    slide[0].classList.remove('not-visible');
+                    if (!noArrows) {
+                        document.querySelector('.slider-left').classList.add('not-visible')
+                        document.querySelector('.slider-right').classList.remove('not-visible')
+                    }
+                } else {
+                    slide[slide.length - 1].classList.remove('not-visible');
+                    slide[0].classList.remove('not-visible');
+                    if (!noArrows) {
+                        document.querySelector('.slider-left').classList.remove('not-visible')
+                        document.querySelector('.slider-right').classList.remove('not-visible')
+                    }
+                }
+            }
+        }
+        
+        function slideRight() {
+            if (slideCurrent < slideTotal) {
+                slideCurrent++;
+            } else {
+                slideCurrent = 0;
+            }
+        
+            if (slideCurrent > 0) {
+                var preactiveSlide = slide[slideCurrent - 1];
+            } else {
+                var preactiveSlide = slide[slideTotal];
+            }
+            var activeSlide = slide[slideCurrent];
+            if (slideCurrent < slideTotal) {
+                var proactiveSlide = slide[slideCurrent + 1];
+            } else {
+                var proactiveSlide = slide[0];
+        
+            }
+        
+            slide.forEach((elem) => {
+                var thisSlide = elem;
+                if (thisSlide.classList.contains('preactivede')) {
+                    thisSlide.classList.remove('preactivede');
+                    thisSlide.classList.remove('preactive');
+                    thisSlide.classList.remove('active');
+                    thisSlide.classList.remove('proactive');
+                    thisSlide.classList.add('proactivede');
+                }
+                if (thisSlide.classList.contains('preactive')) {
+                    thisSlide.classList.remove('preactive');
+                    thisSlide.classList.remove('active');
+                    thisSlide.classList.remove('proactive');
+                    thisSlide.classList.remove('proactivede');
+                    thisSlide.classList.add('preactivede');
+                }
+            });
+            preactiveSlide.classList.remove('preactivede');
+            preactiveSlide.classList.remove('active');
+            preactiveSlide.classList.remove('proactive');
+            preactiveSlide.classList.remove('proactivede');
+            preactiveSlide.classList.add('preactive');
+        
+            activeSlide.classList.remove('preactivede');
+            activeSlide.classList.remove('preactive');
+            activeSlide.classList.remove('proactive');
+            activeSlide.classList.remove('proactivede');
+            activeSlide.classList.add('active');
+        
+            proactiveSlide.classList.remove('preactivede');
+            proactiveSlide.classList.remove('preactive');
+            proactiveSlide.classList.remove('active');
+            proactiveSlide.classList.remove('proactivede');
+            proactiveSlide.classList.add('proactive');
+        
+            updateBullet();
+        }
+        
+        function slideLeft() {
+            if (slideCurrent > 0) {
+                slideCurrent--;
+            } else {
+                slideCurrent = slideTotal;
+            }
+        
+            if (slideCurrent < slideTotal) {
+                var proactiveSlide = slide[slideCurrent + 1];
+            } else {
+                var proactiveSlide = slide[0];
+            }
+            var activeSlide = slide[slideCurrent];
+            if (slideCurrent > 0) {
+                var preactiveSlide = slide[slideCurrent - 1];
+            } else {
+                var preactiveSlide = slide[slideTotal];
+            }
+            slide.forEach((elem) => {
+                var thisSlide = elem;
+                if (thisSlide.classList.contains('proactive')) {
+                    thisSlide.classList.remove('preactivede');
+                    thisSlide.classList.remove('preactive');
+                    thisSlide.classList.remove('active');
+                    thisSlide.classList.remove('proactive');
+                    thisSlide.classList.add('proactivede');
+                }
+                if (thisSlide.classList.contains('proactivede')) {
+                    thisSlide.classList.remove('preactive');
+                    thisSlide.classList.remove('active');
+                    thisSlide.classList.remove('proactive');
+                    thisSlide.classList.remove('proactivede');
+                    thisSlide.classList.add('preactivede');
+                }
+            });
+        
+            preactiveSlide.classList.remove('preactivede');
+            preactiveSlide.classList.remove('active');
+            preactiveSlide.classList.remove('proactive');
+            preactiveSlide.classList.remove('proactivede');
+            preactiveSlide.classList.add('preactive');
+        
+            activeSlide.classList.remove('preactivede');
+            activeSlide.classList.remove('preactive');
+            activeSlide.classList.remove('proactive');
+            activeSlide.classList.remove('proactivede');
+            activeSlide.classList.add('active');
+        
+            proactiveSlide.classList.remove('preactivede');
+            proactiveSlide.classList.remove('preactive');
+            proactiveSlide.classList.remove('active');
+            proactiveSlide.classList.remove('proactivede');
+            proactiveSlide.classList.add('proactive');
+        
+            updateBullet();
+        }
+        
+        function goToIndexSlide(index) {
+            const sliding = (slideCurrent > index) ? () => slideRight() : () => slideLeft();
+            while (slideCurrent !== index) {
+                sliding();
+            }
+        }
+        
+        slideInitial();</script>
+</body>
+</html>

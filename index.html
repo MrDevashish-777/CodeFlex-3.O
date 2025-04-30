@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IEEE SB Jain Student Branch</title>
+    <link rel="stylesheet" href="./commonStyle.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/aa7454d09f.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div id="logo" style="width: 55%;">
+            <a href="./index.html">
+            <img src="./img/IEEE_logo.png" alt="" style="width: 22%;filter: brightness(0) invert(1);">
+            </a>
+        </div>
+        <ul class="nav" id="nav">
+            <ul class="navLogo">
+                <a href="./index.html">
+                    <img src="./img/IEEE_logo.png" alt="" style="width: 40%;filter: brightness(0) invert(1);">
+               </a>
+            </ul>
+
+            <li class="nav-link"><a href="./index.html">Home</a></li>
+            <li class="nav-link"><a href="./aboutus.html">About Us</a></li>
+            <li class="nav-link"><a href="./contact.html">Contact</a></li>
+            <li class="nav-link"><a href="./sponsors.html">Sponsors</a></li>
+            <li class="sociallinkContainer">
+                <img class="sociallink" src="./img/fabook-icon-white.svg" alt="">
+                <img class="sociallink" src="./img/twitter-icon-white.svg" alt="">
+                <img class="sociallink" src="./img/inkedin-icon-white.svg" alt="">
+                <img class="sociallink" src="./img/whatsapp-icon-white.svg" alt="">
+            </li>
+        </ul>
+        <div id="barContainer">
+            <i id="bar" class="fa-solid fa-bars"></i>
+        </div>
+    </header>
+
+    <!-- Hero page -->
+    <section class="hero gridSection">
+        <div class="sectionDesc">
+            <h1 class="headline">
+                Welcome to Code Flex 2.O by <span class="cryptoText">IEEE SB Jain Student Branch</span>.
+            </h1>
+            <p class="sub-headline">
+                Code Flex 2.O is a flagship event organized by the <b>IEEE Student Branch</b> at SBJITMR.
+            It's a platform where coding enthusiasts, technology innovators, and aspiring developers come together to celebrate the art of coding.
+            </p>
+            <br>
+            <div class="btnContainer">
+                <button class="btn btn1"><a href="./contact.html" style="text-decoration: none;color: inherit;">Contact Now</a></button>
+                <button class="btn btn1">Register</button>
+            </div>
+        </div>
+        <div class="sectionPic bouncepic" id="sectionPic">
+            <img src="./img/hero-image.png" alt="" style="width: 80%;">
+        </div>
+    </section>
+
+    <!-- Carousel -->
+    <section>
+        <div class="new-carouselContainer">
+            <div class="new-eachCarousel eachCarouselBorder" style="display: block;">
+                <img src="./img/Workshop1.png" style="height: 22%;" alt="">
+                <article class="carouselDesc">
+                    <center><h1 class="carouselTitle">WorkShop 1</h1>
+                    <p class="carouselPara">Introduction to Competitive Coding</p>
+                    <!--<div class="carouselPrice">
+                        <h3>$34,000</h3>
+                        <span class="rect"></span>
+                        <h3 class="carouselDiscount">15%</h3>
+                    </div>-->
+                    <button class="btn carouselBtn">Register Now</button></center>
+                </article>
+            </div>
+    
+            <div class="new-eachCarousel eachCarouselBorder" style="display: block;">
+                <img src="./img/Workshop2.png" style="height: 22%;" alt="">
+                <article class="carouselDesc">
+                    <center><h1 class="carouselTitle">WorkShop 2</h1>
+                    <p class="carouselPara">Web Development Bootcamp</p>
+                    <!--<div class="carouselPrice">
+                        <h3>$25,600</h3>
+                        <span class="rect"></span>
+                        <h3 class="carouselDiscount">9%</h3>
+                    </div>-->
+                    <button class="btn carouselBtn">Register Now</button></center>
+                </article>
+            </div>
+    
+            <div class="new-eachCarousel eachCarouselBorder" style="display: block;">
+                <img src="./img/Workshop3.png" style="height: 22%;" alt="">
+                <article class="carouselDesc">
+                    <center><h1 class="carouselTitle">WorkShop 3</h1>
+                    <p class="carouselPara">Machine Learning Essentials</p>
+                    <!--<div class="carouselPrice">
+                        <h3>$7,000</h3>
+                        <span class="rect"></span>
+                        <h3 class="carouselDiscount">4%</h3>
+                    </div>-->
+                    <button class="btn carouselBtn">Register now</button></center>
+                </article>
+            </div>
+    
+            <!--<div class="eachCarousel">
+                <img src="./img/bitcoin-icon.png" alt="">
+                <article class="carouselDesc">
+                    <h1 class="carouselTitle">Bitcoin</h1>
+                    <p class="carouselPara">Bitcoin is an innovative payment network</p>
+                    <div class="carouselPrice">
+                        <h3>$34,000</h3>
+                        <span class="rect"></span>
+                        <h3 class="carouselDiscount">15%</h3>
+                    </div>
+                    <button class="btn carouselBtn">Buy & Trade</button>
+                </article>
+            </div>
+    
+            <div class="eachCarousel">
+                <img src="./img/ethereum-icon.png" alt="">
+                <article class="carouselDesc">
+                    <h1 class="carouselTitle">Ethereum</h1>
+                    <p class="carouselPara">Ethereum is open-source blockchain currency</p>
+                    <div class="carouselPrice">
+                        <h3>$25,600</h3>
+                        <span class="rect"></span>
+                        <h3 class="carouselDiscount">9%</h3>
+                    </div>
+                    <button class="btn carouselBtn">Buy & Trade</button>
+                </article>
+            </div>
+    
+            <div class="eachCarousel">
+                <img src="./img/tether-icon.png" alt="">
+                <article class="carouselDesc">
+                    <h1 class="carouselTitle">Tether</h1>
+                    <p class="carouselPara">Tether is a stable coin cryptocurrency</p>
+                    <div class="carouselPrice">
+                        <h3>$7,000</h3>
+                        <span class="rect"></span>
+                        <h3 class="carouselDiscount">4%</h3>
+                    </div>
+                    <button class="btn carouselBtn">Buy & Trade</button>
+                </article>
+            </div>
+        </div>-->
+        <!--<div class="carouselIndicator">
+            <div class="indicator activeIndicator" onclick="slideCarousel(0)"></div>
+            <div class="indicator" onclick="slideCarousel(1)"></div>
+            <div class="indicator" onclick="slideCarousel(2)"></div>-->
+            <!--<div class="indicator" onclick="slideCarousel(3)"></div>
+            <div class="indicator" onclick="slideCarousel(4)"></div>
+            <div class="indicator" onclick="slideCarousel(5)"></div>-->
+        </div>
+    </section>
+
+    <!-- Processes 
+    <section class="gridSection">
+        <div class="sectionDesc processessDesc">
+            <h1 class="sectionHeader">Chain Process</h1>
+            <p class="sectionPara">We do not charge any fees.
+            </p>
+            <div class="eachProcesses">
+                <img src="./img/handshake-icon-white-line.svg" alt="handshake">
+                <div class="eachprocessesPara">
+                    <h1 class="processTitle">Trading</h1>
+                    <p>
+                        The act of speculating on cryptocurrency price movements 
+                        via a CFD trading account, or buying and selling.
+                    </p>
+                </div>
+            </div>
+            <div class="eachProcesses">
+                <img src="./img/cart-icon-white-line.svg" alt="handshake">
+                <div class="eachprocessesPara">
+                    <h1 class="processTitle">Buying</h1>
+                    <p>
+                        Best cryptocurrency exchanges currently purchase Bitcoin, 
+                        Ethereum, and Litecoin other coins and tokens on the platform.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="sectionPic bouncepic processesPic" id="sectionPic">
+            <img src="./img/chain-process-img.png" alt="">
+        </div>
+    </section>-->
+
+    <!-- Markets 
+    <section class="gridSection">
+        <div class="sectionDesc marketDesc">
+            <h1 class="sectionHeader">Markets at finger</h1>
+            <p class="sectionPara">The Blockchain is a decentralized, 
+                digital ledger of transactions that are recorded 
+                confirmed
+            </p>
+            <div class="eachMarket">
+                <img src="./img/buy-icon-color.svg" alt="handshake">
+                <div>
+                    <h1 class="marketTitle">Buying</h1>
+                    <p class="darkPara">
+                        Best cryptocurrency exchanges currently purchase 
+                        Bitcoin, Ethereum, and Litecoin other coins and tokens 
+                        on the platform.
+                    </p>
+                </div>
+            </div>
+            <div class="eachMarket">
+                <img src="./img/trading-icon-color.svg" alt="handshake">
+                <div>
+                    <h1 class="marketTitle">Trading</h1>
+                    <p class="darkPara">
+                        The act of speculating on cryptocurrency price movements 
+                        via a CFD trading account, or buying and selling.
+                    </p>
+                </div>
+            </div>
+            <div class="eachMarket">
+                <img src="./img/support-icon-color.svg" alt="handshake">
+                <div>
+                    <h1 class="marketTitle">Supporting</h1>
+                    <p class="darkPara">
+                        Don’t worry if you’re new to crypto and digital 
+                        currencies – Skrill makes setting up a cryptocurrency 
+                        wallet easy.
+                    </p>
+                </div>
+            </div>
+            <div class="eachMarket">
+                <img src="./img/online-icon-color.svg" alt="handshake">
+                <div>
+                    <h1 class="marketTitle">Online</h1>
+                    <p class="darkPara">
+                        Cryptocurrency, especially Bitcoin, 
+                        has proven to be a popular trading 
+                        vehicle, even if legendary investors 
+                        as good.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="sectionPic marketspicSection" id="sectionPic">
+           <h1 class="marketspicHeader">CRYPTOCURRENCY</h1>
+            <div class="marketsPicContainer">
+                <div class="marketPic marketPic1">
+                    <img src="./img/persent-icon-white.svg" alt="">
+                    <article class="marketTitle">Hot Sale</article>
+                </div>
+    
+                <div class="marketPic marketPic2">
+                    <img src="./img/bitcoin-icon-white.svg" alt="">
+                    <article class="marketTitle">Bit coin</article>
+                </div>
+    
+                <div class="marketPic marketPic3">
+                    <img src="./img/ethereum-white-icon.svg" alt="">
+                    <article class="marketTitle">ETHEREUM</article>
+                </div>
+    
+                <div class="marketPic marketPic4">
+                    <img src="./img/handshake-icon-white.svg" alt="">
+                    <article class="marketTitle">CONNECTING</article>
+                </div>
+            </div>
+            </div>
+    </section>-->
+
+    <!-- Dashboard -->
+    <section class="gridSection">
+        <div class="sectionDesc dashboardDesc">
+            <h1 class="sectionHeader">Discover the Essence of CodeFlex</h1>
+            <p class="sectionPara">
+                <ul>
+                    <li>CodeFlex is an immersive coding experience.</li>
+                    <li>Participants create websites under unique, mismatched themes.</li>
+                    <li>Themes range from Horror Portfolios to Anime Merchandise sites.</li>
+                    <li>Challenges spark creativity and broaden coding skills.</li>
+                    <li>Enjoyment and learning go hand in hand in our successful events.</li>
+                    <li>Certificates are awarded, recognizing participants' coding excellence.</li>
+                    <li>CodeFlex is a celebration of innovation and collaborative learning.</li>
+                    <li>Join us in the next edition for an adventure in coding creativity.</li>
+                </ul>
+                <br><br>
+            </p>
+            <button class="btn">Explore Now</button>
+        </div>
+
+        <div class="sectionPic dashboardPic">
+            <img src="./img/Webdev.gif" alt="" style="border-radius: 50%;">
+        </div>
+
+    </section>
+
+    <!--<div class="fundSection">
+        <div class="sectionDesc">
+            <h1 class="sectionHeader">Control your funds</h1>
+            <p class="sectionPara">
+                Our mining pool offers some of the most competitive contracts in the market.
+            </p>
+            <div class="fundsContainer">
+                <div class="fund">
+                    <img src="./img/cryptocurrency-white-icon.svg" alt="cryptocurrency">
+                    <h1 class="fundType">Support All Currency</h1>
+                    <p class="darkPara">
+                        Accept and process payments from all types of currencies.
+                    </p>
+                </div>
+
+                <div class="fund">
+                    <img src="./img/blockchain-white-icon.svg" alt="cryptocurrency">
+                    <h1 class="fundType">Block Chain System</h1>
+                    <p class="darkPara">
+                        How it Works, Benefits and its Deployment in Financial
+                    </p>
+                </div>
+
+                <div class="fund">
+                    <img src="./img/cryptocurrency-sell-white-icon.svg" alt="cryptocurrency">
+                    <h1 class="fundType">Fund Selling</h1>
+                    <p class="darkPara">
+                        How to Profit in the Crypto Markets through Investing
+                    </p>
+                </div>
+
+                <div class="fund">
+                    <img src="./img/cryptocurrency-card-white-icon.svg" alt="cryptocurrency">
+                    <h1 class="fundType">Crypto Card</h1>
+                    <p class="darkPara">
+                        Crypto Cards and Why Cryptocurrency are the Future
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>-->
+
+    <center><section class="gridSection">
+        <div class="sectionDesc newsletterDesc">
+            <h1 class="sectionHeader">What to Expect!</h1>
+            <p class="sectionPara">
+                Explore our diverse range of workshops, engage in coding competitions, and connect with like-minded individuals who share a passion for technology.
+            Whether you're a seasoned coder or just starting your coding journey, Code Flex 2.O has something for everyone.
+            </p>
+            <!--<form action="#" class="newsletter">
+                <input type="email" name="" id="newsletter" placeholder="enter your email">
+                <button type="submit" class="btn primaryBtn">Subscribe</button>
+            </form>-->
+        </div>
+        <!--<div class="sectionPic bouncepic newsletterPic">
+            <img src="./img/newsletter.png" alt="">
+        </div>-->
+        <div class="sectionPic bouncepic processesPic" id="sectionPic">
+            <img src="./img/newsletter.png" alt="">
+        </div>
+    </section></center>
+
+    <footer>
+        <div class="joinSection">
+            <div class="joinDesc">
+                <h1 class="sectionHeader">CodeFlex 2.O - Register Now!</h1>
+                <p class="sectionPara">
+                    Ready to take on the CodeFlex challenge? Register now and unlock a world of coding excitement!
+                </p>
+            </div>
+            <button class="btn primaryBtn">Register Now</button>
+        </div>
+
+        <div class="footerlinksContainer">
+            <div class="footerAboutus">
+                <img src="./img/IEEE_logo.png" alt="" style="width: 60%;filter: brightness(0) invert(1);">
+                <p class="darkPara"><p>
+                Unlock your potential and stay tuned for updates on our upcoming events.</p>
+                </p>
+                <div class="footersociallinkContainer">
+                    <img class="sociallink" src="./img/fabook-icon-white.svg" alt="">
+                    <img class="sociallink" src="./img/twitter-icon-white.svg" alt="">
+                    <img class="sociallink" src="./img/inkedin-icon-white.svg" alt="">
+                    <img class="sociallink" src="./img/whatsapp-icon-white.svg" alt="">
+                </div>
+            </div>
+
+            <div class="footerlink">
+                <a href="https://maps.app.goo.gl/eTGbnsAB9r2UUKM96"><h1 class="linkTitle">Our College</h1>
+                <p>S.B.Jain Institute of Technology, Management & Research, Nagpur</p>
+                <p>Yerla Village, Kalmeshwar Road, Nagpur, Maharashtra 441501</p>
+                <p>Contact: 9823218380</p></a>
+            </div>
+
+            <div class="footerlink">
+                <h1 class="linkTitle">Sponsors</h1>
+                <p>Sponsor 1</p>
+                <p>Sponsor 2</p>
+            </div>
+
+            <!--<div class="footerlink">
+                <h1 class="linkTitle">Collaborators</h1>
+                <p>Collaborator 1</p>
+                <p>Collaborator 2</p>
+            </div>-->
+
+            <div class="footerlink">
+                <h1 class="linkTitle">Host Partners</h1>
+                <p>Host Partner 1</p>
+                <p>Host Partner 2</p>
+            </div>
+        </div>
+
+        <div class="footerCopyright">
+             <p>&copy; 2024 design and developed by <a href="#" class="developedBy">IEEE SB Jain Student Branch</a>.</p>
+        </div>
+    </footer>
+    
+
+    <script src="./script.js"></script>
+</body>
+</html>
